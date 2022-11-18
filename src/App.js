@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React, { useState} from "react";
+import Navbar from "./component/navbar";
+import {Route, Routes } from "react-router-dom";
+import Home from "./component/home";
+import LoginPage from "./component/loginPage";
+import List from "./component/list";
+import Logout from "./component/logOut";
+import Layout from "./component/layout";
+import UserContext from "./context/userContext";
+const App = () => {
+  const [checkLogin, setCheckLogin] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <UserContext.Provider value={{ checkLogin, setCheckLogin }}>
+      <div className="container pt-5">
+        <Layout>
+        <Routes>
+        <Route element={<Home/>} path="/" />
+        <Route element={<List/>} path="/list" />
+        <Route element={<LoginPage/>} path="/login" />
+        <Route element={<Logout/>} path="/logOut" />
+        </Routes>
+        </Layout>
+      </div>
+      </UserContext.Provider>
+    </>
   );
-}
-
+};
 export default App;
