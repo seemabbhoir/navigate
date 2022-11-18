@@ -6,9 +6,6 @@ const Home = () => {
   //    const sount = arr[0];
   //    const setCount = arr[1];
   // let temp = 0;
-  // const [count, setCount] = useState(0);
-  // const context = useState(UserContext);
-  // console.log("CHECK THIS OUT", context);
   const [count, setCount] = useState(0);
 const context = useContext(UserContext);
   console.log("CHECK THIS OUT", context);
