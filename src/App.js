@@ -11,8 +11,9 @@ const App = () => {
   const [checkLogin, setCheckLogin] = useState(false);
   return (
     <>
-      <Navbar />
+      
       <UserContext.Provider value={{ checkLogin, setCheckLogin }}>
+      <Navbar />
       <div className="container pt-5">
         <Layout>
         <Routes>

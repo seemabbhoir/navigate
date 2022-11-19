@@ -7,7 +7,6 @@ const LoginPage = () => {
   //     email: "",
   //     password: "",
   //   });
-
   const navigate = useNavigate();
   const { setCheckLogin } = useContext(UserContext);
   const [email, setEmail] = useState("");
@@ -34,7 +33,7 @@ const LoginPage = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label className="form-label" for="form2Example1">
+          <label className="form-label" htmlFor="form2Example1">
             Email address
           </label>
         </div>
@@ -46,7 +45,7 @@ const LoginPage = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <label className="form-label" for="form2Example2">
+          <label className="form-label" htmlFor="form2Example2">
             Password
           </label>
         </div>
