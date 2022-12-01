@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import UserContext from "../context/userContext";
 import { googleProvider } from "../helper";
@@ -6,10 +6,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const LoginPage = () => {
-  //   const [userData, setUserData] = useState({
-  //     email: "",
-  //     password: "",
-  //   });
   const navigate = useNavigate();
   const { setCheckLogin } = useContext(UserContext);
   const [email, setEmail] = useState("");
@@ -26,9 +22,9 @@ const LoginPage = () => {
     navigate("/");
   };
 
-  const  handleGoogleLogin = ()=> {
+  const handleGoogleLogin = () => {
     firebase.auth().signInWithPopup(googleProvider);
-  }
+  };
 
   return (
     <>
@@ -65,7 +61,13 @@ const LoginPage = () => {
         </button>
       </form>
       <br />
-    <button type="button" onClick={()=>handleGoogleLogin()} className="btn btn-outline-danger">Google Auth</button>
+      <button
+        type="button"
+        onClick={() => handleGoogleLogin()}
+        className="btn btn-outline-danger"
+      >
+        Google Auth
+      </button>
     </>
   );
 };
