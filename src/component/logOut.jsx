@@ -13,13 +13,13 @@ const Logout = () => {
 
   return (
     <>
-      <div class="card text-left">
-        <div class="card-body">
-          <h4 class="card-title">Do you wish to log out from out website ?</h4>
-          <p class="card-text mt-5">
+      <div className="card text-left">
+        <div className="card-body">
+          <h4 className="card-title">Do you wish to log out from out website ?</h4>
+          <p className="card-text mt-5">
             <button
               type="button"
-              class="btn btn-outline-primary"
+              className="btn btn-outline-primary"
               onClick={() => handleLogout()}>
               Logout
             </button>

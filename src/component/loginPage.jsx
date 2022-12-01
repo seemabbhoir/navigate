@@ -1,6 +1,9 @@
 import React, { useContext,useState } from "react";
 import { useNavigate } from "react-router";
 import UserContext from "../context/userContext";
+import { googleProvider } from "../helper";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const LoginPage = () => {
   //   const [userData, setUserData] = useState({
@@ -22,6 +25,11 @@ const LoginPage = () => {
     setCheckLogin(true);
     navigate("/");
   };
+
+  const  handleGoogleLogin = ()=> {
+    firebase.auth().signInWithPopup(googleProvider);
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -56,6 +64,8 @@ const LoginPage = () => {
           Sign in
         </button>
       </form>
+      <br />
+    <button type="button" onClick={()=>handleGoogleLogin()} className="btn btn-outline-danger">Google Auth</button>
     </>
   );
 };
